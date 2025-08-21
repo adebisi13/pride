@@ -142,3 +142,129 @@ body {
   gap: 1rem;
   font-weight: bold;
 }
+
+/* ===========================
+   🔸 RESPONSIVE ADD-ON ONLY 🔸
+   Paste at the end of style.css
+   =========================== */
+
+/* ——— Tablet-ish tweaks ——— */
+@media (max-width: 992px) {
+  /* Remove the thick page borders on smaller devices */
+  body {
+    border-left: none;
+    border-top: none;
+  }
+
+  /* Give the main section a little more breathing room */
+  .main-section {
+    gap: 2rem;
+    padding: 2.5rem 4%;
+  }
+
+  /* Scale headline a touch */
+  .left-column h1 {
+    font-size: 1.8rem;
+  }
+
+  /* Logos: keep them readable and wrap nicely */
+  .footer .logos {
+    gap: 0.75rem;
+  }
+  .footer .logos img {
+    height: auto;
+    max-height: 28px;
+    width: auto;
+  }
+}
+
+/* ——— Mobile (stack layout, hide nav) ——— */
+@media (max-width: 768px) {
+  /* Hide the nav links on small screens (no HTML changes needed) */
+  .nav-links {
+    display: none;
+  }
+
+  /* Compact navbar padding */
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+
+  /* Stack main columns */
+  .main-section {
+    flex-direction: column;
+    padding: 2rem 5%;
+  }
+  .left-column,
+  .right-column {
+    min-width: 100%;
+  }
+
+  /* Features: make the image+text sit in a clean vertical flow */
+  .feature {
+    display: flex;              /* override inline-block */
+    align-items: flex-start;    /* proper flex value */
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .feature .icon-placeholder,
+  .feature .icon-placeholder img {
+    width: 36px;
+    height: 36px;
+    display: block;             /* images as block elements */
+  }
+
+  /* Form compactness */
+  .form-box {
+    padding: 1.25rem;
+    border-radius: 10px;
+  }
+
+  /* Make all images safe on small screens */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Footer logos: two/three per row without squishing */
+  .footer .logos {
+    justify-content: center;
+    gap: 0.6rem 1rem;
+  }
+  .footer .logos img {
+    max-width: 40vw;   /* prevent overflow on very narrow screens */
+    max-height: 26px;
+  }
+}
+
+/* ——— Small phones ——— */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1rem;
+  }
+
+  .left-column h1 {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .feature h3 {
+    font-size: 1rem;
+  }
+  .feature p {
+    font-size: 0.92rem;
+  }
+
+  .contact-button,
+  .submit-btn {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .form-box > label {
+    font-size: 0.95rem;
+  }
+}
